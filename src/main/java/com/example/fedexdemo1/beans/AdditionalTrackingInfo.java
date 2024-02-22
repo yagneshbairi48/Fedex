@@ -1,8 +1,11 @@
 package com.example.fedexdemo1.beans;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class AdditionalTrackingInfo {
     private boolean hasAssociatedShipments;
     private String nickname;
+    @JsonProperty("packageIdentifiers")
     private PackageIdentifiers[] packageIdentifiers;
 
     private String shipmentNotes;

@@ -79,21 +79,7 @@ public class FedEntity{
         this.shipmentNotes = shipmentNotes;
     }
 
-    public String getPackageIdentifiersType() {
-        return packageIdentifiersType;
-    }
 
-    public void setPackageIdentifiersType(String packageIdentifiersType) {
-        this.packageIdentifiersType = packageIdentifiersType;
-    }
-
-    public String getPackageIdentifiersValue() {
-        return packageIdentifiersValue;
-    }
-
-    public void setPackageIdentifiersValue(String packageIdentifiersValue) {
-        this.packageIdentifiersValue = packageIdentifiersValue;
-    }
 
     public String getDistanceToDestinationUnits() {
         return distanceToDestinationUnits;
@@ -343,11 +329,11 @@ public class FedEntity{
         this.latestStatusResidential = latestStatusResidential;
     }
 
-    public String[] getLatestStatusStreetLines() {
+    public String getLatestStatusStreetLines() {
         return latestStatusStreetLines;
     }
 
-    public void setLatestStatusStreetLines(String[] latestStatusStreetLines) {
+    public void setLatestStatusStreetLines(String latestStatusStreetLines) {
         this.latestStatusStreetLines = latestStatusStreetLines;
     }
 
@@ -567,11 +553,11 @@ public class FedEntity{
         this.actualAddressresidental = actualAddressresidental;
     }
 
-    public String[] getActualAddressstreetLines() {
+    public String getActualAddressstreetLines() {
         return actualAddressstreetLines;
     }
 
-    public void setActualAddressstreetLines(String[] actualAddressstreetLines) {
+    public void setActualAddressstreetLines(String actualAddressstreetLines) {
         this.actualAddressstreetLines = actualAddressstreetLines;
     }
 
@@ -697,11 +683,11 @@ public class FedEntity{
         this.scanLocationResdential = scanLocationResdential;
     }
 
-    public String[] getScanLocationstreetLines() {
+    public String getScanLocationstreetLines() {
         return scanLocationstreetLines;
     }
 
-    public void setScanLocationstreetLines(String[] scanLocationstreetLines) {
+    public void setScanLocationstreetLines(String scanLocationstreetLines) {
         this.scanLocationstreetLines = scanLocationstreetLines;
     }
 
@@ -943,23 +929,11 @@ public class FedEntity{
         this.requestedAppointmentDate = requestedAppointmentDate;
     }
 
-    public String getRequestedAppointmentDescription() {
-        return requestedAppointmentDescription;
-    }
-
-    public void setRequestedAppointmentDescription(String requestedAppointmentDescription) {
-        this.requestedAppointmentDescription = requestedAppointmentDescription;
-    }
 
 
 
-    public String getRequestedAppointmentType() {
-        return requestedAppointmentType;
-    }
 
-    public void setRequestedAppointmentType(String requestedAppointmentType) {
-        this.requestedAppointmentType = requestedAppointmentType;
-    }
+
 
     public String getCustomDeliveryOptionsdescription() {
         return customDeliveryOptionsdescription;
@@ -1129,29 +1103,17 @@ public class FedEntity{
         this.estimatedDeliveryTimeWindowType = estimatedDeliveryTimeWindowType;
     }
 
-    public String getPieceCountsCount() {
-        return pieceCountsCount;
+    public String getPieceCounts() {
+        return pieceCounts;
     }
 
-    public void setPieceCountsCount(String pieceCountsCount) {
-        this.pieceCountsCount = pieceCountsCount;
+    public void setPieceCounts(String pieceCountsCount) {
+        this.pieceCounts = pieceCounts;
     }
 
-    public String getPieceCountsDescription() {
-        return pieceCountsDescription;
-    }
 
-    public void setPieceCountsDescription(String pieceCountsDescription) {
-        this.pieceCountsDescription = pieceCountsDescription;
-    }
 
-    public String getPieceCountsType() {
-        return pieceCountsType;
-    }
 
-    public void setPieceCountsType(String pieceCountsType) {
-        this.pieceCountsType = pieceCountsType;
-    }
 
     public String getOriginLocationId() {
         return originLocationId;
@@ -1433,21 +1395,14 @@ public class FedEntity{
         this.shipmentbeforePossessionStatus = shipmentbeforePossessionStatus;
     }
 
-    public String getShipmentWeightUnit() {
-        return shipmentWeightUnit;
+    public String getShipmentWeight() {
+        return shipmentWeight;
     }
 
-    public void setShipmentWeightUnit(String shipmentWeightUnit) {
-        this.shipmentWeightUnit = shipmentWeightUnit;
+    public void setShipmentWeight(String shipmentWeightUnit) {
+        this.shipmentWeight = shipmentWeight;
     }
 
-    public String getShipmentWeightValue() {
-        return shipmentWeightValue;
-    }
-
-    public void setShipmentWeightValue(String shipmentWeightValue) {
-        this.shipmentWeightValue = shipmentWeightValue;
-    }
 
     public String getShipmentcontentPieceCount() {
         return shipmentcontentPieceCount;
@@ -1679,10 +1634,17 @@ public class FedEntity{
     private String  nickname  ;
     @Column(name = "shipmentnotes")
     private String shipmentNotes;
-    @Column(name = "packageidentifierstype")
-    private String packageIdentifiersType  ;
-    @Column(name = "packageidentifiersvalue")
-    private String packageIdentifiersValue  ;
+    @Column(name = "packageidentifiers",columnDefinition = "json")
+    private String packageIdentifiers  ;
+
+    public String getPackageIdentifiers() {
+        return packageIdentifiers;
+    }
+
+    public void setPackageIdentifiers(String packageIdentifiers) {
+        this.packageIdentifiers = packageIdentifiers;
+    }
+
     @Column(name = "distancetodestinationunits")
     private String distanceToDestinationUnits  ;
     @Column(name = "distancetodestinationvalue")
@@ -1746,7 +1708,7 @@ public class FedEntity{
     @Column(name = "lateststatusresidential")
     private boolean latestStatusResidential   ;
     @Column(name = "lateststatusstreetlines")
-    private String[] latestStatusStreetLines  ;
+    private String latestStatusStreetLines  ;
     @Column(name = "lateststatuscity")
     private String latestStatusCity  ;
     @Column(name = "lateststatusurbanizationcode")
@@ -1813,6 +1775,17 @@ public class FedEntity{
     @Column(name = "errorparameter",columnDefinition = "json")
     private String errorParameterList   ;
 
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
+    @Column(name="errormessage")
+    private String errorMessage;
+
    // @Type(type="json")
     @Column(name = "specialhandlings",columnDefinition = "json")
     private  String specialHandlings  ;
@@ -1851,7 +1824,7 @@ public class FedEntity{
     @Column(name = "actualaddressresidental")
     private Boolean actualAddressresidental  ;
     @Column(name = "actualaddressstreetlines")
-    private String[] actualAddressstreetLines  ;
+    private String actualAddressstreetLines  ;
     @Column(name = "actualaddresscity")
     private String actualAddressCity  ;
     @Column(name = "actualaddressurbanizationcode")
@@ -1897,7 +1870,7 @@ public class FedEntity{
     @Column(name="scanlocationresdential")
     private Boolean scanLocationResdential  ;
     @Column(name="scanlocationstreetlines")
-    private String[] scanLocationstreetLines  ;
+    private String scanLocationstreetLines  ;
     @Column(name="scanlocationcity")
     private String scanLocationCity  ;
     @Column(name="scanlocationurbanizationcode")
@@ -1986,8 +1959,7 @@ public class FedEntity{
 
     @Column(name="requestedappointmentdate")
     private String requestedAppointmentDate   ;
-    @Column(name="requestedappointmentdescription")
-    private String requestedAppointmentDescription  ;
+
     @Column(name="requestedappointmentwindowbegins")
     private String requestedAppointmentWindowBegins;
     @Column(name="requestedappointmentwindowends")
@@ -2009,12 +1981,11 @@ public class FedEntity{
         this.requestedAppointmentWindowBegins = requestedAppointmentWindowBegins;
     }
 
-    @Column(name="requestedappointmenttype")
-    private String requestedAppointmentType  ;
+
 
     @Column(name="customdeliveryoptionsdescription")
     private String customDeliveryOptionsdescription  ;
-    @Column(name="customDeliveryoptionstype")
+    @Column(name="custom_deliveryoptionstype")
     private String customDeliveryOptionsType  ;
     @Column(name="customdeliveryoptionsstatus")
     private String customDeliveryOptionsStatus  ;
@@ -2054,12 +2025,10 @@ public class FedEntity{
     private String estimatedDeliveryTimeWindowends  ;
     @Column(name="estimateddeliverytimewindowtype")
     private String estimatedDeliveryTimeWindowType  ;
-    @Column(name="piececountscount")
-    private  String pieceCountsCount  ;
-    @Column(name="piececountsdescription")
-    private  String pieceCountsDescription  ;
-    @Column(name="piececountstype")
-    private  String pieceCountsType  ;
+    @Column(name="piececounts",columnDefinition = "json")
+    private  String pieceCounts;
+
+
     @Column(name="originlocationid")
     private String originLocationId  ;
     @Column(name="originlocationpersonname")
@@ -2131,10 +2100,9 @@ public class FedEntity{
     private String shipmentContentPartNumber   ;
     @Column(name="shipmentbeforepossessionstatus")
     private boolean shipmentbeforePossessionStatus   ;
-    @Column(name="shipmentweightunit")
-    private String shipmentWeightUnit   ;
-    @Column(name="shipmentweightvalue")
-    private String shipmentWeightValue   ;
+    @Column(name="shipmentweight",columnDefinition = "json")
+    private String shipmentWeight   ;
+
     @Column(name="shipmentcontentpiececount")
     private String shipmentcontentPieceCount  ;
     @Column(name="splitshipmentspiececount")
@@ -2221,6 +2189,213 @@ public class FedEntity{
     private String lastUpdatedDestinationAddressCountryName ;
     @Column(name="alerts")
     private String alerts;
+
+    public String getTransitTimeServiceType() {
+        return transitTimeServiceType;
+    }
+
+    public void setTransitTimeServiceType(String transitTimeServiceType) {
+        this.transitTimeServiceType = transitTimeServiceType;
+    }
+
+
+
+    public String getTransitTimeCustomerMessage() {
+        return transitTimeCustomerMessage;
+    }
+
+    public void setTransitTimeCustomerMessage(String transitTimeCustomerMessage) {
+        this.transitTimeCustomerMessage = transitTimeCustomerMessage;
+    }
+
+    public String getTransitTimeDistance() {
+        return transitTimeDistance;
+    }
+
+    public void setTransitTimeDistance(String transitTimeDistance) {
+        this.transitTimeDistance = transitTimeDistance;
+    }
+
+    public String getBrokerCommitTimestamp() {
+        return brokerCommitTimestamp;
+    }
+
+    public void setBrokerCommitTimestamp(String brokerCommitTimestamp) {
+        this.brokerCommitTimestamp = brokerCommitTimestamp;
+    }
+
+    public String getCommitCutOffTime() {
+        return commitCutOffTime;
+    }
+
+    public void setCommitCutOffTime(String commitCutOffTime) {
+        this.commitCutOffTime = commitCutOffTime;
+    }
+
+    public String getCommitCommodityName() {
+        return commitCommodityName;
+    }
+
+    public void setCommitCommodityName(String commitCommodityName) {
+        this.commitCommodityName = commitCommodityName;
+    }
+
+    public String getCommitTransitDays() {
+        return commitTransitDays;
+    }
+
+    public void setCommitTransitDays(String commitTransitDays) {
+        this.commitTransitDays = commitTransitDays;
+    }
+
+    public String getCommitMessageDetails() {
+        return commitMessageDetails;
+    }
+
+    public void setCommitMessageDetails(String commitMessageDetails) {
+        this.commitMessageDetails = commitMessageDetails;
+    }
+
+    public String getDerivedDestinationServiceArea() {
+        return derivedDestinationServiceArea;
+    }
+
+    public void setDerivedDestinationServiceArea(String derivedDestinationServiceArea) {
+        this.derivedDestinationServiceArea = derivedDestinationServiceArea;
+    }
+
+    public String getDerivedDestinationCountryCode() {
+        return derivedDestinationCountryCode;
+    }
+
+    public void setDerivedDestinationCountryCode(String derivedDestinationCountryCode) {
+        this.derivedDestinationCountryCode = derivedDestinationCountryCode;
+    }
+
+    public String getDerivedDestinationLocationId() {
+        return derivedDestinationLocationId;
+    }
+
+    public void setDerivedDestinationLocationId(String derivedDestinationLocationId) {
+        this.derivedDestinationLocationId = derivedDestinationLocationId;
+    }
+
+    public String getDerivedDestinationAirportId() {
+        return derivedDestinationAirportId;
+    }
+
+    public void setDerivedDestinationAirportId(String derivedDestinationAirportId) {
+        this.derivedDestinationAirportId = derivedDestinationAirportId;
+    }
+
+    public String getDerivedDestinationPostalCode() {
+        return derivedDestinationPostalCode;
+    }
+
+    public void setDerivedDestinationPostalCode(String derivedDestinationPostalCode) {
+        this.derivedDestinationPostalCode = derivedDestinationPostalCode;
+    }
+
+    public String getDerivedDestinationStateOrProvinceCode() {
+        return derivedDestinationStateOrProvinceCode;
+    }
+
+    public void setDerivedDestinationStateOrProvinceCode(String derivedDestinationStateOrProvinceCode) {
+        this.derivedDestinationStateOrProvinceCode = derivedDestinationStateOrProvinceCode;
+    }
+
+    public int getDerivedDestinationLocationNumber() {
+        return derivedDestinationLocationNumber;
+    }
+
+    public void setDerivedDestinationLocationNumber(int derivedDestinationLocationNumber) {
+        this.derivedDestinationLocationNumber = derivedDestinationLocationNumber;
+    }
+
+    public String getTransitTimeDateDetail() {
+        return transitTimeDateDetail;
+    }
+
+    public void setTransitTimeDateDetail(String transitTimeDateDetail) {
+        this.transitTimeDateDetail = transitTimeDateDetail;
+    }
+
+    public String getTransitTimeGeoPositionalCoordinates() {
+        return transitTimeGeoPositionalCoordinates;
+    }
+
+    public void setTransitTimeGeoPositionalCoordinates(String transitTimeGeoPositionalCoordinates) {
+        this.transitTimeGeoPositionalCoordinates = transitTimeGeoPositionalCoordinates;
+    }
+
+    public String getTransitTimeServiceName() {
+        return transitTimeServiceName;
+    }
+
+    public void setTransitTimeServiceName(String transitTimeServiceName) {
+        this.transitTimeServiceName = transitTimeServiceName;
+    }
+
+    public boolean isEncoded() {
+        return encoded;
+    }
+
+    public void setEncoded(boolean encoded) {
+        this.encoded = encoded;
+    }
+
+    @Column(name="transittimeservicetype")
+    private String transitTimeServiceType;
+
+
+    @Column(name="transittimecustomermessage",columnDefinition = "json")
+    private String transitTimeCustomerMessage;
+
+    @Column(name="transittimedistance",columnDefinition = "json")
+    private String transitTimeDistance;
+    @Column(name="brokercommittimestamp")
+    private String brokerCommitTimestamp;
+    @Column(name="commitcutofftime")
+    private String commitCutOffTime;
+
+    @Column(name="commitcommodityname")
+    private String commitCommodityName;
+
+    @Column(name="committransitdays",columnDefinition = "json")
+    private String commitTransitDays;
+
+    @Column(name="commitmessagedetails")
+    private String commitMessageDetails;
+
+    @Column(name="deriveddestinationservicearea")
+    private String derivedDestinationServiceArea;
+    @Column(name="deriveddestinationcountrycode")
+    private String derivedDestinationCountryCode;
+    @Column(name="deriveddestinationlocationid")
+    private String derivedDestinationLocationId;
+    @Column(name="deriveddestinationairportid")
+    private String derivedDestinationAirportId;
+    @Column(name="deriveddestinationpostalcode")
+    private String derivedDestinationPostalCode;
+    @Column(name="deriveddestinationstateorprovincecode")
+    private String derivedDestinationStateOrProvinceCode;
+    @Column(name="deriveddestinationlocationnumber")
+    private int derivedDestinationLocationNumber;
+
+    @Column(name="transittimedatedetail",columnDefinition = "json")
+    private String transitTimeDateDetail;
+
+    @Column(name="transittimegeopositionalcoordinates")
+    private String transitTimeGeoPositionalCoordinates;
+
+    @Column(name="transittimeservicename")
+    private String transitTimeServiceName;
+
+    @Column(name="encoded")
+    private boolean encoded;
+
+
+
 
 
 }

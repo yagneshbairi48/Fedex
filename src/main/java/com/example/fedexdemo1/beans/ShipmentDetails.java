@@ -1,8 +1,11 @@
 package com.example.fedexdemo1.beans;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class ShipmentDetails {
     private Contents[] contents;
-    private Boolean beforePossessionStatus;
+    private Boolean possessionStatus;
+    @JsonProperty("weight")
     private Weight[] weight;
     private String contentPieceCount;
     private SplitShipments[] splitShipments;
@@ -15,12 +18,12 @@ public class ShipmentDetails {
         this.contents = contents;
     }
 
-    public Boolean getBeforePossessionStatus() {
-        return beforePossessionStatus;
+    public Boolean getpossessionStatus() {
+        return possessionStatus;
     }
 
-    public void setBeforePossessionStatus(Boolean beforePossessionStatus) {
-        this.beforePossessionStatus = beforePossessionStatus;
+    public void setpossessionStatus(Boolean possessionStatus) {
+        this.possessionStatus = possessionStatus;
     }
 
     public Weight[] getWeight() {

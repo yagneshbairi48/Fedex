@@ -2,8 +2,17 @@ package com.example.fedexdemo1.beans;
 
 public class PackageIdentifiers {
     private String type;
-    private String value ;
+    private String[] values ;
     private String trackingNumberUniqueId;
+    private String carrierCode;
+
+    public String getCarrierCode() {
+        return carrierCode;
+    }
+
+    public void setCarrierCode(String carrierCode) {
+        this.carrierCode = carrierCode;
+    }
 
     public String getType() {
         return type;
@@ -13,12 +22,12 @@ public class PackageIdentifiers {
         this.type = type;
     }
 
-    public String getValue() {
-        return value;
+    public String[] getValues() {
+        return values;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setValues(String[] value) {
+        this.values = values;
     }
 
     public String getTrackingNumberUniqueId() {

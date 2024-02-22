@@ -34,12 +34,12 @@ public class TrackResults {
     private OriginLocation originLocation;
     private RecipientInformation recipientInformation;
     private StandardTransitTimeWindow standardTransitTimeWindow;
-
     private ShipmentDetails shipmentDetails;
     private ReasonDetail reasonDetail;
     private String[] availableNotifications;
     private ShipperInformation shipperInformation;
     private LastUpdatedDestinationAddress lastUpdatedDestinationAddress;
+
 
     public TrackingNumberInfo getTrackingNumberInfo() {
         return trackingNumberInfo;

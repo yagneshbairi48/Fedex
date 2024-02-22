@@ -3,9 +3,7 @@ package com.example.fedexdemo1.beans;
 public class    Fed {
     public String transactionId;
     public String customerTransactionId;
-
     public Output output;
-
     public Output getOutput() {
         return output;
     }
